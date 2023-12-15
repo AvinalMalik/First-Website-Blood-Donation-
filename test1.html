@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Website</title>
+    <link rel="stylesheet" href="app1.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+
+</head>
+<body>
+
+    <div class="header">
+        <img src="C:\Users\avina\Downloads\DALL·E 2023-11-08 12.40.15 - Create an image with a flat design aesthetic featuring an open gift box on a solid red background. Emerging from the box, design a stylized, flat repr.png" alt="Blood Donation Logo">
+        <div class="navbar">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#safety">Safety & Procedures</a></li>
+                <li><a href="#donor-registration">Donor Registration</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#faqs">FAQs</a></li>
+                <li><a href="#events">Events & Drives</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#news">News & Updates</a></li>
+                <li><a href="#contact">Contact & Support</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="slider">
+        <div class="slides">
+            <div class="slide fade" style="background-image: url('Dollarphotoclub_59153663.jpg');">
+                <div class="overlay-text">"Every drop counts<br>become a lifesaver<br> today"</div>
+            </div>
+            <div class="slide fade" style="background-image: url('pexels-photo-7108348.jpeg');">
+                <div class="overlay-text">"Every drop counts<br>become a lifesaver<br>today"</div>
+            </div>
+            <div class="slide fade" style="background-image: url('pexels-photo-6285378.jpeg');">
+                <div class="overlay-text">"Every drop counts<br>become a lifesaver<br>today"</div>
+            </div>
+            <button class="callout-button">Donate now</button>
+        </div>
+        <br>
+        <!-- The dots/circles -->
+        <div style="text-align:center">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+        </div>
+    </div>
+    <div class="counter-container">
+        <div>
+            <div class="label">Lives Saved</div>
+            <div id="livesSaved" class="counter" data-target="2443200">0</div>
+        </div>
+        <div>
+            <div class="label">Current Stock</div>
+            <div id="currentStock" class="counter" data-target="2568900">0</div>
+        </div>
+        <div>
+            <div class="label">Donations</div>
+            <div id="donations" class="counter" data-target="1544100">0</div>
+        </div>
+    </div>
+    <div> class ="donation-center-images-container"
+        <div class="donation-center-images" id="donationCenterImages" style="display: none;"></div>
+    </div>
+    <div class="map-container">
+        <div id="map" style="width: 100%; height: 600px;"></div>
+        <button class="find-centers-btn" onclick="getUserLocation()">Find Nearby Donation Centers</button>
+    </div>
+
+    <div class="container">
+        <h2>Donation Form</h2>
+        <form action="submit-donation-info.php" method="post">
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="birthdate">Birthdate:</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bloodType">Blood Type:</label>
+                <select id="bloodType" name="bloodType">
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+
+    <script src="app1.js"></script> <!-- Link to your JavaScript file -->
+    <script src="scrollbar.js"></script>
+    <script src="counter.js"></script>
+    <script src="locationiq-map.js"></script>
+
+
+</body>
+</html>

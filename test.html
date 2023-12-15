@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Website</title>
+    <link rel="stylesheet" href="app1.css">
+</head>
+<body>
+
+    <div class="header">
+        <img src="C:\Users\avina\Downloads\DALL·E 2023-11-08 12.40.15 - Create an image with a flat design aesthetic featuring an open gift box on a solid red background. Emerging from the box, design a stylized, flat repr.png" alt="Blood Donation Logo">
+        <div class="navbar">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#safety">Safety & Procedures</a></li>
+                <li><a href="#donor-registration">Donor Registration</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#faqs">FAQs</a></li>
+                <li><a href="#events">Events & Drives</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#news">News & Updates</a></li>
+                <li><a href="#contact">Contact & Support</a></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <div class="container">
+        <h2>Donation Form</h2>
+        <form action="submit-donation-info.php" method="post">
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="birthdate">Birthdate:</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bloodType">Blood Type:</label>
+                <select id="bloodType" name="bloodType">
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+</body>
+</html>

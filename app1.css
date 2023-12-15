@@ -1,0 +1,378 @@
+:root {
+    --custom-red: rgb(198, 0, 1); /* Custom red color */
+    --deep-burgundy: #800020; /* Burgundy color for depth */
+    --white-bg: #fff; /* White background for slider */
+    --charcoal-gray: #303030; /* Charcoal gray color for text */
+    --gold-accent: #f0a500; /* Accents of gold */
+    --overlay-font-size: 30px; /* Size of the overlay text */
+    --scrollbar-visible: var(--custom-red);
+}
+
+body {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--white-bg); /* Updated to white background */
+    color: var(--charcoal-gray);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--custom-red);
+    color: #fff;
+    padding: 10px;
+}
+
+.header img {
+    height: 50px; /* Adjust the size of your logo */
+}
+
+.navbar {
+    width : 100%
+  
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--custom-red);
+}
+
+.navbar a {
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar a:hover, .navbar a:focus {
+    background-color: var(--deep-burgundy);
+    color: #fff;
+}
+
+
+.container {
+    width: 90%;
+    margin: 20px auto;
+    background: var(--white-bg); /* Updated to white background */
+    padding: 5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ... other existing form styles ... */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select {
+    width: 100%; /* Adjusted to full width */
+    padding: 10px;
+    border: 1px solid var(--deep-burgundy);
+    border-radius: 5px;
+    background: var(--soft-tan);
+    color: var(--charcoal-gray);
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background: var(--custom-red);
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background: var(--deep-burgundy);
+}
+
+/* Slider */
+.slider {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    margin: auto;
+}
+
+.slides {
+    display: flex;
+    overflow: hidden;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    position: relative;
+}
+
+.slide {
+    display: block; /* Hide slides by default */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out; /* Transition for the fade effect */
+}
+.slide.active {
+    display: block; /* This will show the slide */
+    z-index: 2;
+    transition: opacity 1.5s ease-in-out;
+    opacity: 1; /* Fully visible */
+}
+
+/* Fade animation */
+
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+/* Overlay Text */
+.overlay-text {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center alignment adjustment */
+    background: none; /* Remove background or make it transparent */
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    font-size: 6vw;
+    font-family: Arial, sans-serif; /* Capitalize text */
+    letter-spacing: 2px; /* More spacing for uppercase letters */
+    font-weight: bold;
+}
+
+
+/* Dot navigation */
+.dot-container {
+    position: absolute;
+    bottom: 10px; /* Adjust as needed, closer to the bottom */
+    left: 50%; /* Center the dots container */
+    transform: translateX(-50%); /* Center the dots container */
+    padding: 0;
+    background: none; /* No background */
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* 'Donate Now' button */
+.callout-button {
+    position: absolute;
+    bottom: 150px; /* Adjust the position as needed */
+    right: 80px; /* Adjust the position as needed */
+    background-color: var(--custom-red);
+    color: white;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    text-transform: uppercase; /* Capitalize text */
+}
+
+.callout-button:hover {
+    background-color: var(--deep-burgundy);
+}
+
+/* Continue with the existing media queries and any other styles as they are */
+@media (max-width: 768px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    select {
+        width: 100%; /* Adjusts width to 100% for smaller screens */
+    }
+}
+.counter-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    text-align: center;
+}
+
+.counter {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--custom-red); /* Using the red color defined in your :root */
+    margin-top: 10px;
+}
+
+.label {
+    font-size: 2rem; /* Increase the font size */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Change the font family */
+    color: var(--charcoal-gray); /* Using the gray color defined in your :root */
+    font-weight: bold;
+}
+
+
+/* Add more styles as needed */
+@media only screen and (max-width:768px) {
+    .header img {
+        height: 40px; /* Reduced image size for small screens */
+    }
+
+    .navbar a {
+        padding: 10px 8px; /* Reduced padding */
+        font-size: 0.8rem; /* Reduced font size */
+    }
+
+    .overlay-text {
+        font-size: var(--overlay-font-size);
+    }
+
+    .callout-button {
+        padding: 10px 20px;
+        font-size: 16px; /* Adjusted font size */
+        bottom: 20px; /* Adjusted position */
+        right: 20px; /* Adjusted position */
+    }
+}
+@media only screen and (max-width: 480px) {
+    .header img {
+        height: 35px; /* Further reduced image size for very small screens */
+    }
+
+    .navbar a {
+        padding: 8px 6px; /* Further reduced padding */
+        font-size: 0.7rem; /* Further reduced font size */
+    }
+
+    .overlay-text {
+        font-size: 5vw; /* Adjusted font size for very small screens */
+    }
+
+    .callout-button {
+        padding: 8px 16px;
+        font-size: 14px; /* Adjusted font size */
+        bottom: 15px; /* Adjusted position */
+        right: 15px; /* Adjusted position */
+    }
+
+    /* ... other styles for very small screens ... */
+}
+/* Total scrollbar style */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the vertical scrollbar */
+    height: 12px; /* Height of the horizontal scrollbar */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-visible); /* Scroll handle color */
+    border-radius: 6px;
+    border: 3px solid var(--white-bg); /* White border for the handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--custom-red); /* Scroll handle color when hovered */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--white-bg); /* Scrollbar track color */
+    border-radius: 6px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1); /* Shadow for some depth */
+}
+
+/* Track on active */
+::-webkit-scrollbar-track:active {
+    background: var(--white-bg); /* Scrollbar track color when clicked */
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-visible) var(--white-bg);
+}
+
+/* Initially set the scrollbar to transparent on supported browsers */
+body::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+/* Use CSS variable to toggle scrollbar thumb visibility */
+
+.map-container {
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position:relative;
+}
+/* Button styling */
+.find-centers-btn {
+    padding: 10px 20px;
+    background-color: #d9534f; /* Red color for the button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+    z-index: 1110;
+  }
+  
+  .find-centers-btn:hover,
+  .find-centers-btn:focus {
+    background-color: #c9302c; /* A darker red on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  /* Additional CSS to handle the layout */
+#mapContainer.active {
+    width: 50%; /* Shrink to half width */
+  }
+  
+  .donation-center-images {
+    width: 50%; /* Same width as the shrunken map */
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  /* Style for images */
+  .donation-center-image {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  

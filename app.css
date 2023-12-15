@@ -1,0 +1,220 @@
+:root {
+    --custom-red: rgb(198, 0, 1); /* Custom red color */
+    --deep-burgundy: #800020; /* Burgundy color for depth */
+    --white-bg: #fff; /* White background for slider */
+    --charcoal-gray: #303030; /* Charcoal gray color for text */
+    --gold-accent: #f0a500; /* Accents of gold */
+    --overlay-font-size: 30px; /* Size of the overlay text */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--white-bg); /* Updated to white background */
+    color: var(--charcoal-gray);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--custom-red);
+    color: #fff;
+    padding: 10px;
+}
+
+.header img {
+    height: 50px; /* Adjust the size of your logo */
+}
+
+.navbar {
+    width : 100%
+  
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--custom-red);
+}
+
+.navbar a {
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar a:hover, .navbar a:focus {
+    background-color: var(--deep-burgundy);
+    color: #fff;
+}
+
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background: var(--white-bg); /* Updated to white background */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ... other existing form styles ... */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select {
+    width: 100%; /* Adjusted to full width */
+    padding: 10px;
+    border: 1px solid var(--deep-burgundy);
+    border-radius: 5px;
+    background: var(--soft-tan);
+    color: var(--charcoal-gray);
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background: var(--custom-red);
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background: var(--deep-burgundy);
+}
+
+/* Slider */
+.slider {
+    position: relative;
+    margin: auto;
+}
+
+.slides {
+    display: flex;
+    overflow: hidden;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    position: relative;
+}
+
+.slide {
+    display: block; /* Hide slides by default */
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out; /* Transition for the fade effect */
+}
+.slide.active {
+    display: block; /* This will show the slide */
+    z-index: 2;
+    transition: opacity is ease-in-out;
+    opacity: 1; /* Fully visible */
+}
+
+/* Fade animation */
+
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+/* Overlay Text */
+.overlay-text {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center alignment adjustment */
+    background: none; /* Remove background or make it transparent */
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    font-size: 6vw;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase; /* Capitalize text */
+    letter-spacing: 2px; /* More spacing for uppercase letters */
+}
+
+
+/* Dot navigation */
+.dot-container {
+    position: absolute;
+    bottom: 10px; /* Adjust as needed, closer to the bottom */
+    left: 50%; /* Center the dots container */
+    transform: translateX(-50%); /* Center the dots container */
+    padding: 0;
+    background: none; /* No background */
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* 'Donate Now' button */
+.callout-button {
+    position: absolute;
+    bottom: 150px; /* Adjust the position as needed */
+    right: 80px; /* Adjust the position as needed */
+    background-color: var(--custom-red);
+    color: white;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    text-transform: uppercase; /* Capitalize text */
+}
+
+.callout-button:hover {
+    background-color: var(--deep-burgundy);
+}
+
+/* Continue with the existing media queries and any other styles as they are */
+@media (max-width: 768px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    select {
+        width: 100%; /* Adjusts width to 100% for smaller screens */
+    }
+}
+
+/* Add more styles as needed */
